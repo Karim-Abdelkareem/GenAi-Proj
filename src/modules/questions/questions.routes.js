@@ -1,0 +1,10 @@
+import { Router } from "express";
+import { generateQuestions } from "./questions.controller.js";
+import { protect } from "../../middleware/auth.middleware.js";
+
+const router = Router();
+
+// Generate interview questions
+router.post("/", protect, generateQuestions);
+
+export default router;
