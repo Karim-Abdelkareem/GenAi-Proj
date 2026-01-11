@@ -55,8 +55,8 @@ async function startServer() {
         // level: "senior",
         // role: "backend-developer",
         // stack: ["Node.js", "PostgreSQL"],
-        },
-      });
+      },
+    });
 
     // 5. Start HTTP server (this will also start WebSocket server)
     httpServer.listen(port, () => {
@@ -99,8 +99,8 @@ async function startServer() {
         wss.close(() => {
           logger.info("[SERVER] WebSocket server closed");
           process.exit(0);
-  });
-});
+        });
+      });
     };
 
     process.on("SIGINT", () => gracefulShutdown("SIGINT"));
